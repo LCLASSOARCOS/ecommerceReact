@@ -1,10 +1,38 @@
-.container {
+.navegation {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
     justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 0px;
+    text-decoration: none;
 }
 
-.colorRed{
-    color: red;
+.navCategoria{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.navCategoria1{
+    text-decoration: none;
+    color: rgb(7, 11, 15);
+
+}
+
+.logo{
+    text-decoration: none;
+    color: rgb(9, 12, 15);
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+.botonesNav{
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: black;
+    background: transparent;
+    font-size: 15px;
 }

@@ -1,6 +1,6 @@
 
 import NavBar from "./components/NavBar/NavBar"
-import SectionA from "./components/sectionA/SectionA"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <NavBar />
-    <SectionA />
+    <ItemListContainer greeting={'FELIZ NAVIDAD PARA TODOS USTEDES!!'}/>
     </>
   )
 }
