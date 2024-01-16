@@ -1,0 +1,34 @@
+.titulo{
+    color: rgb(154, 150, 150);
+}
+
+.buttons{
+    margin-left: 30px;
+}
+
+.containerButon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;      
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.separador{
+    margin-left: 10px;
+}
+
+.carrito{
+    background: rgb(170, 12, 12);
+    color: rgb(6, 6, 5);
+    border: none;
+    border-radius: 4px;
+    margin: 10px 0px;
+    cursor: pointer;
+}

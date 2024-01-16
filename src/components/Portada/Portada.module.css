@@ -1,0 +1,35 @@
+.sectionE {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../public/portada2.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    margin: 0px;
+  }
+  .sectionE h2 {
+    color: #fafafa;
+    margin-top: 200px;
+    align-items: end;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+  .sectionE p {
+    color: #000000;
+    background-color: #fafafa;
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .sectionE p:hover {
+    background: #616060;
+  }
+  .sectionE a {
+    text-decoration: none;
+  }
