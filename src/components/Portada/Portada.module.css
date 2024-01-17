@@ -18,18 +18,22 @@
     font-weight: bold;
     font-family: "Roboto", sans-serif;
   }
-  .sectionE p {
+  .sectionE button {
     color: #000000;
     background-color: #fafafa;
-    padding: 5px 5px;
-    border-radius: 10px;
+    padding: 10px 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 0.7rem;
     font-family: "Roboto", sans-serif;
+    border: none;
+    margin-bottom: 20px;
   }
-  .sectionE p:hover {
+
+  .sectionE button:hover {
     background: #616060;
   }
+
   .sectionE a {
     text-decoration: none;
   }

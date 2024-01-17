@@ -1,10 +1,10 @@
 import classes from './Portada.module.css'
 
-const Portada = () => {
+const Portada = ({onAdd}) => {
     return (
         <section className={classes.sectionE}>
            <h2>Moda 2024</h2>
-           <p>Comprar</p>
+           <button>Comprar</button>
         </section>
     )
 }

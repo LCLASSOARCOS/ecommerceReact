@@ -1,16 +1,73 @@
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    align-items: center;
-    justify-content: space-around;
-    border: solid red 2px;
+    justify-content: center;
 }
 
 .img{
-    width: 80%;
+    width: 30%;
 }
 
 .titulo{
+    font-size: 25px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    font-weight: none;
+    color: rgb(107, 107, 108);
+}
+
+.divisor{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-left: 70px;
+}
+
+.precio {
+    font-size: 100px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.imgMini{
+    width: 70px;
+    border: 1px solid rgb(96, 91, 91);
+    border-radius: 10px;
+}
+
+.description{
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+.cop{
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.tallas {
+    margin: 10px 0px;
+}
+
+.tallas p {
+    display: inline;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(193, 191, 191) solid;
+    padding: 10px 14px;
+    margin: 0px 20px 0px 0px;
+    cursor: pointer;
+    font-weight: bold;
+}
+  
+.tallas p:hover {
+    background-color: #c8c1c1;
+}
+
+.divisor p{
     font-size: 15px;
 }
+

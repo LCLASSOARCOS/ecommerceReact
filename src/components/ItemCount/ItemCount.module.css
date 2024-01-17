@@ -9,14 +9,15 @@
 .containerButon{
     display: flex;
     flex-direction: row;
-    align-items: center;      
+    align-items: center; 
+    margin-left: 50px;    
 }
 
 .container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: start;
     width: 100%;
 }
 
@@ -31,4 +32,30 @@
     border-radius: 4px;
     margin: 10px 0px;
     cursor: pointer;
+}
+
+.buttonComprar {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+  
+.btnCesta {
+    background-color: rgb(36, 206, 141);
+    margin-top: 10px;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 5px;
+    color: #fafafa;
+    font-size: 20px;
+    width: 70%;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+  
+.btnCesta:hover {
+    background: steelblue;
 }

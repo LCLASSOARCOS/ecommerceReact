@@ -1,6 +1,9 @@
 .titulo{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: rgb(40, 67, 67);
 }
 
 .imagenNavidad{
@@ -12,4 +15,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.cargue{
+    text-align: center;
+    font-size: 30px;
 }

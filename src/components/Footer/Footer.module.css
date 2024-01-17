@@ -1,0 +1,82 @@
+
+
+.categoriasFooter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: nowrap;
+    background-color: #fafafa;
+    margin: 40px 0px 0px 0px;
+    border-top: 1px #716a6a solid;
+    padding: 0px 10px;
+  }
+  
+  .ayudaFooter {
+    margin: 10px 0px;
+    width: 100%;
+  }
+
+  .ayudaFooter p{
+    font-size: 12px;
+    margin-top: 0;
+  }
+
+  .ayudaFooter h4 {
+    margin-bottom: 30px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+  .ayudaFooter .numeroFooter {
+    color: rgb(12, 208, 91);
+  }
+  .ayudaFooter a {
+    text-decoration: none;
+  }
+  
+  .parrafoFooter {
+    color: rgb(47, 49, 49);
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .mediosDePago {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+  
+  .logoPse {
+    font-size: 100px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tarjetas {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+  }
+  
+  .appStore {
+    width: 100px;
+    margin: 0px 10px 20px 10px;
+  }
+  
+  .contactoWpp {
+    font-weight: bold;
+  }
+  
+  /* footer final */
+
+  .dir {
+    background-color: #000000;
+    color: #fafafa;
+    padding: 10px 0px;
+    text-align: center;
+  }
+  .dir p {
+    color: #fafafa;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  }

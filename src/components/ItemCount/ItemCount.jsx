@@ -17,13 +17,12 @@ function ItemCount({stock, initial= 1, onAdd}) {
     }
     return (
         <div className={classes.container}>
-            <p className={classes.titulo}>Camiseta roja</p>
             <div className={classes.containerButon}>
                 <button onClick={decrementar}>-</button>
                 <h3 className={classes.buttons}>{count}</h3>
                 <button onClick={incrementar} className={classes.buttons}>+</button>
             </div>
-                <button className={classes.carrito} onClick={()=> onAdd(count)}>
+                <button className={classes.btnCesta} onClick={()=> onAdd(count)}>
                     Agregar al carrito
                 </button>
         </div>

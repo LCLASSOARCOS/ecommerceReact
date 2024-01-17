@@ -1,6 +1,5 @@
 import classes from './NavBar.module.css'
 import CartWidget from '../CartWidget/CartWidget'
-import Buton from '../Button/Button'
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -16,9 +15,8 @@ const NavBar = () => {
             <Link to={'/category/sale'} className={classes.botonesNav}>Sale</Link>
          </ul>
 
-         <a className={classes.logo} href="index.html">
-            <Link to={'/'} className={classes.logo}>iLASS</Link>
-         </a>
+         <Link to={'/'} className={classes.logo}>iLASS</Link>
+         
 
         <CartWidget />
         

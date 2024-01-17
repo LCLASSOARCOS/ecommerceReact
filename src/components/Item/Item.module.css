@@ -4,13 +4,40 @@
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    border: solid red 2px;
 }
 
 .img{
-    width: 80%;
+    width: 100%;
 }
 
 .titulo{
-    font-size: 15px;
+    font-size: 12px;
+    margin-top: 7px;
+    font-weight: normal;
+    margin-bottom: 0px;
 }
+
+.parrafo2{
+    margin-top: 0px;
+    margin-bottom: 3px ;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.botonDetalle{
+    background-color: rgb(95, 85, 135);
+    color: #fafafa;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+.botonDetalle:hover {
+    background-color: rgb(120, 120, 218);
+  }
+
