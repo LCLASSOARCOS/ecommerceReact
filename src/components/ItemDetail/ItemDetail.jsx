@@ -1,16 +1,22 @@
 import ItemCount from '../ItemCount/ItemCount'
 import classes from './ItemDetail.module.css'
+import { useCart } from '../../context/CartContext'
+import { useState } from 'react'
+
 
 const ItemDetail = ({ id, category, name, img, price, description, stock }) => {
+    const[quantity, setQuantity] = useState(0)
+    const { addItem } = useCart()
 
     const handleOnAdd = (quantity) => {
-        const objProduct = {
+        const objProductToAdd = {
             id,
             name,
             quantity,
             price
         }
-        console.log('se agrego correctamente: ', objProduct)
+        addItem(objProductToAdd)
+        setQuantity(quantity)
     }
     return (
         <div className={classes.container}>

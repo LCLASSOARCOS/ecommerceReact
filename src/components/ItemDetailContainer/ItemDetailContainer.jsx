@@ -1,5 +1,5 @@
 import { getProductById, getProducts, getProductsByCategory } from "../../asyncMock"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import classes from './ItemDetailContainer.module.css'
@@ -7,6 +7,9 @@ import classes from './ItemDetailContainer.module.css'
 
 
 const ItemDetailContainer = () => {
+
+   
+
     const[product, setProduct] = useState(null)
     const[loading, setLoading] = useState(true)
 

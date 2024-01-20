@@ -57,5 +57,24 @@
 }
   
 .btnCesta:hover {
-    background: steelblue;
+    background: rgb(25, 89, 41);
+}
+
+.btnComprar{
+    background-color: rgb(36, 206, 141);
+    margin-top: 10px;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 5px;
+    color: #fafafa;
+    font-size: 20px;
+    width: 70%;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btnComprar:hover {
+    background: rgb(27, 106, 37);
 }
