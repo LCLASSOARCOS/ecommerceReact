@@ -35,7 +35,7 @@
     color: black;
     background: transparent;
     font-size: 15px;
-    
+    cursor: pointer;
 }
 
 a{
@@ -47,6 +47,7 @@ a{
   .botonesNav:hover{
     color: #007bff;
     border-bottom: 1px solid black;
+    
   }
   
   

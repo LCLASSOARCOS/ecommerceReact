@@ -1,46 +1,62 @@
 import { useState, createContext, useContext } from "react"
+import { mostrarNotificacion } from "../notificaciones/Notificaciones"
 
-const CartContext = createContext() 
+const CartContext = createContext()
 
-export const CartProvider = ({children}) => {
-    const[cart, setCart] = useState([])
-  
-    const addItem = (productToAdd) => {
-      if(!isInCart(productToAdd.id)) {
-        setCart(prev => [...prev, productToAdd])
-      } else {
-        console.error('el producto ya esta agregado')
-      }
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([])
+
+  const addItem = (productToAdd) => {
+    if (!isInCart(productToAdd.id)) {
+      setCart(prev => [...prev, productToAdd])
+    } else {
+      mostrarNotificacion('el producto ya esta agregado')
     }
-  
-    const isInCart= (id) =>{
-      return cart.some(prod => prod.id === id)
-    }
-  
-    const removeItem = (id) => {
-      const cartUpdated = cart.filter(prod => prod.id === id)
-      setCart(cartUpdated)
-    }
+  }
 
-    const getTotalQuantity = () => {
-        let accu = 0
+  const isInCart = (id) => {
+    return cart.some(prod => prod.id === id)
+  }
 
-        cart.forEach(prod => {
-            accu += prod.quantity 
-        })
-        return accu
-    }
+  const removeItem = (id) => {
+    const cartUpdated = cart.filter(prod => prod.id !== id)
+    setCart(cartUpdated)
+  }
 
-    const totalQuantity = getTotalQuantity()
+  const totalCart = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const updateCartItemQuantity = (id, newQuantity) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
+  const getTotalQuantity = () => {
+    let accu = 0
+
+    cart.forEach(prod => {
+      accu += prod.quantity
+    })
+    return accu
+  }
+
+  const totalQuantity = getTotalQuantity()
+
+  // Función para limpiar el carrito
+  const clearCart = () => {
+    setCart([]);
+  }
 
 
-    return (
-        <CartContext.Provider value={{cart, addItem, removeItem, totalQuantity}}>
-        {children}
-        </CartContext.Provider>
-    )
+  return (
+    <CartContext.Provider value={{ cart, addItem, removeItem, updateCartItemQuantity, totalQuantity, totalCart, clearCart }}>
+      {children}
+    </CartContext.Provider>
+  )
 }
 
 export const useCart = () => {
-    return useContext(CartContext)
+  return useContext(CartContext)
 }

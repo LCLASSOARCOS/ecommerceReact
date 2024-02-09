@@ -1,11 +1,10 @@
 import classes from './ItemListContainer.module.css'
-import navidadImage from '../../assets/navidad.jpeg';
-import ItemCount from '../ItemCount/ItemCount';
 import { useEffect } from 'react';
-import { getProducts, getProductsByCategory } from '../../asyncMock';
 import { useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { db } from '../../services/firebase/firebaseConfig';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 
 const ItemListContainer = ({ greeting}) => {
     const[products, setProducts] = useState([])
@@ -23,18 +22,26 @@ const ItemListContainer = ({ greeting}) => {
 
     useEffect(()=>{
         setLoading(true)
-        const asyncFuction = categoryId ? getProductsByCategory : getProducts
         
-        asyncFuction(categoryId)
-            .then(products => {
-                setProducts(products)
+        const productsCollection = categoryId
+            ? query(collection(db, 'products'), where('category', '==', categoryId))
+            : collection(db, 'products')
+
+        getDocs(productsCollection)
+            .then(querySnapshot => {
+                const productsAdapted = querySnapshot.docs.map(doc =>{
+                    const fields = doc.data()
+                    return { id: doc.id, ...fields}
+                })
+                setProducts(productsAdapted)
             })
-            .catch(error=>{
-                console.error(error)
-            })
-            .finally(() => {
+            .catch(error => {
+                (error, 'hubo un error')
+            } )
+            .finally(()=> {
                 setLoading(false)
             })
+
     }, [categoryId])
 
     if(loading) {

@@ -2,22 +2,30 @@ import ItemCount from '../ItemCount/ItemCount'
 import classes from './ItemDetail.module.css'
 import { useCart } from '../../context/CartContext'
 import { useState } from 'react'
+import { mostrarNotificacion } from '../../notificaciones/Notificaciones'
 
 
 const ItemDetail = ({ id, category, name, img, price, description, stock }) => {
-    const[quantity, setQuantity] = useState(0)
+    const[quantity, setQuantity] = useState(1)
     const { addItem } = useCart()
 
-    const handleOnAdd = (quantity) => {
+    const handleOnAdd = (quantity) => { 
         const objProductToAdd = {
             id,
             name,
             quantity,
-            price
+            price,
+            img,
+            stock
         }
         addItem(objProductToAdd)
-        setQuantity(quantity)
+        setQuantity(quantity) 
     }
+
+    const handleAddToCart = (quantity) => {
+        mostrarNotificacion(`Se agrego al carrito: ${quantity} ${name}`);
+    };
+
     return (
         <div className={classes.container}>
             <img src={img} alt={name} className={classes.img} />
@@ -34,7 +42,7 @@ const ItemDetail = ({ id, category, name, img, price, description, stock }) => {
                     <p>XL</p>
                 </div>
                 <p>Encuentra tu talla</p>
-                <ItemCount stock={stock} onAdd={handleOnAdd} />
+                <ItemCount stock={stock} onAdd={handleOnAdd} onAddToCart={handleAddToCart}/>
             </div>
         </div>
     )

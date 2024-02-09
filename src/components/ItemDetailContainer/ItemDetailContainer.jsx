@@ -3,8 +3,8 @@ import { useEffect, useState, useContext } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import classes from './ItemDetailContainer.module.css'
-
-
+import { db } from "../../services/firebase/firebaseConfig"
+import { getDoc, doc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
@@ -26,16 +26,21 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
         setLoading(true)
         
-        getProductById(productId)
-            .then(product => {
-                setProduct(product)
+        const productDocument = doc(db,'products', productId)
+
+        getDoc(productDocument)
+            .then(queryDocumentSnapshot => {
+                const fields = queryDocumentSnapshot.data()
+                const productAdapted = {id: queryDocumentSnapshot.id, ...fields}
+                setProduct(productAdapted)
             })
-            .catch(error => {
-                console.error(error)
+            .catch(error=> {
+                error, 'hubo un error'
             })
-            .finally(() => {
+            .finally(()=> {
                 setLoading(false)
             })
+
     }, [productId])
 
     if(loading) {

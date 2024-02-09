@@ -3,6 +3,7 @@ import classes from './ItemList.module.css'
 
 const ItemList = ({products}) =>{
     return (
+        <>
         <div className={classes.container}>
             {
                 products.map(prod=>{
@@ -11,8 +12,8 @@ const ItemList = ({products}) =>{
                     )
                 }) 
             }
-            
         </div>
+        </>
     )
     
 }

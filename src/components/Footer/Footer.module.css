@@ -1,17 +1,21 @@
 
 
 .categoriasFooter {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    flex-wrap: nowrap;
+    display: flex;
+    flex-wrap: row;
+    justify-content: space-between;
     background-color: #fafafa;
     margin: 40px 0px 0px 0px;
     border-top: 1px #716a6a solid;
-    padding: 0px 10px;
+    padding: 0px 0px;
+    border-top: #b3acac 1px solid;  
   }
   
   .ayudaFooter {
-    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
   }
 
@@ -21,7 +25,8 @@
   }
 
   .ayudaFooter h4 {
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     color: #000000;
     font-weight: bold;
     font-size: 15px;
