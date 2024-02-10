@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./OrderForm.module.css"; // Asegúrate de tener un archivo CSS para estilos
 
 const OrderForm = ({ onCreate }) => {
   const [formData, setFormData] = useState({
@@ -24,10 +25,12 @@ const OrderForm = ({ onCreate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+   
+      <form className={styles.orderForm} onSubmit={handleSubmit}>
+      <label className={styles.formLabel}>
         Nombre:
         <input
+          className={styles.formInput}
           type="text"
           name="name"
           value={formData.name}
@@ -35,9 +38,10 @@ const OrderForm = ({ onCreate }) => {
         />
       </label>
 
-      <label>
+      <label className={styles.formLabel}>
         Email:
         <input
+          className={styles.formInput}
           type="email"
           name="email"
           value={formData.email}
@@ -45,9 +49,10 @@ const OrderForm = ({ onCreate }) => {
         />
       </label>
 
-      <label>
+      <label className={styles.formLabel}>
         Teléfono:
         <input
+          className={styles.formInput}
           type="tel"
           name="phone"
           value={formData.phone}
@@ -55,7 +60,9 @@ const OrderForm = ({ onCreate }) => {
         />
       </label>
 
-      <button type="submit">Generar Compra</button>
+      <button className={styles.formButton} type="submit">
+        Generar Compra
+      </button>
     </form>
   );
 };

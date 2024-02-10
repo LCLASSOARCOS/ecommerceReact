@@ -7,12 +7,13 @@ import { db } from "../../services/firebase/firebaseConfig";
 import { mostrarNotificacion } from "../../notificaciones/Notificaciones";
 
 const Checkout = () => {
-  const[loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState(null);
-  const { cart, totalCart, clearCart} = useCart();
+  const [isFormVisible, setIsFormVisible] = useState(true); // Nuevo estado
+  const { cart, totalCart, clearCart } = useCart();
 
   const createOrder = async (userData) => {
-    setLoading(true)
+    setLoading(true);
     try {
       const objOrder = {
         buyer: {
@@ -55,22 +56,18 @@ const Checkout = () => {
 
         // Limpiar el carrito después de generar la orden
         clearCart();
+
+        // Ocultar el formulario después de generar la orden
+        setIsFormVisible(false);
       } else {
-        mostrarNotificacion('error, hay productos que estan agotados o no tienen esa cantidad')
+        mostrarNotificacion('error, hay productos que están agotados o no tienen esa cantidad');
       }
 
     } catch (error) {
-      mostrarNotificacion('error', 'hubo un error al crear la orden')
+      mostrarNotificacion('error', 'hubo un error al crear la orden');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-    
-    if (loading) {
-      return(
-        <h1>se esta cargando su orden, espere</h1>
-      )
-    }
-
   };
 
   return (
@@ -79,15 +76,19 @@ const Checkout = () => {
         <h1>Se está cargando su orden, espere...</h1>
       ) : (
         <div>
-          <h1>Formulario</h1>
-          <OrderForm onCreate={createOrder} />
-          {/* El botón para generar la orden debería estar en el formulario, no aquí */}
-        </div>
-      )}
+          {isFormVisible && ( // Mostrar el formulario solo si isFormVisible es true
+            <div>
+              <h1>Formulario</h1>
+              <OrderForm onCreate={createOrder} />
+            </div>
+          )}
 
-      {orderId && (
-        <div>
-          <h1>El ID de su compra es: {orderId}</h1>
+          {orderId && (
+            <div>
+              <h1>Compra realizada con exito, <br /> 
+              El id de su compra es: {orderId}</h1>
+            </div>
+          )}
         </div>
       )}
     </div>
