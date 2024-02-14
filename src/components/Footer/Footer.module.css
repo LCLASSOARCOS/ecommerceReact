@@ -85,3 +85,14 @@
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
   }
+
+  /* Ajustes especificos para version mobile */
+/* 0 hasta 768px */
+@media (max-width: 650px) {
+
+  .categoriasFooter{
+      display: flex;
+      flex-direction: column;
+      border: solid red 2px;
+  }
+}

@@ -41,3 +41,13 @@
     background-color: rgb(120, 120, 218);
   }
 
+/* responsive-media queries para pantallas de 768px hasta 1023px */
+/* Vista tablet */
+/* index */
+@media (max-width: 1023px) {
+    .gridFlexx {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    }

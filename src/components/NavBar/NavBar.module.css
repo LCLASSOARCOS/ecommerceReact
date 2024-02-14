@@ -5,6 +5,7 @@
     margin: 10px 20px;
     padding: 0px;
     text-decoration: none;
+    border: 2px solid red;
 }
 
 .navCategoria{
@@ -50,4 +51,37 @@ a{
     
   }
   
+  /* Añade estas clases a tu archivo NavBar.module.css */
+
+.menuIcon {
+    display: none; /* Oculta el icono del menú en tamaños de pantalla grandes */
+    cursor: pointer;
+  }
+  
+  .menuOpen {
+    display: flex !important; /* Muestra el menú cuando está abierto */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navigation {
+      flex-direction: column; /* Cambia la dirección del menú en tamaños pequeños */
+    }
+  
+    .menuIcon {
+      display: block; /* Muestra el icono del menú en tamaños de pantalla pequeños */
+    }
+  
+    .navCategoria {
+      display: none; /* Oculta el menú principal en tamaños pequeños */
+      flex-direction: column;
+    }
+  
+    .menuOpen {
+      display: flex !important; /* Muestra el menú cuando está abierto en tamaños pequeños */
+    }
+
+    .logo{
+
+    }
+  }
   
