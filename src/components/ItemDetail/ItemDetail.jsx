@@ -3,6 +3,7 @@ import classes from './ItemDetail.module.css'
 import { useCart } from '../../context/CartContext'
 import { useState } from 'react'
 import { mostrarNotificacion } from '../../notificaciones/Notificaciones'
+import { Link } from 'react-router-dom'
 
 
 const ItemDetail = ({ id, category, name, img, price, description, stock }) => {
