@@ -30,12 +30,13 @@ const CartPage = () => {
             handleQuantityChange={handleQuantityChange}
           />
           <section className={classes.sectionTotal}>
+            <div className={classes.valorTotal}>
+               <p>Total: </p> 
+              <span className={classes.span}>{totalCart} </span>
+            </div>
             <Link className={classes.link} to="/checkout">
               Continuar
             </Link>
-            <p>
-              Total: <span className={classes.span}>{totalCart} </span>
-            </p>
           </section>
         </div>
       )}
