@@ -1,6 +1,22 @@
 .contenedor{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+    align-items: end;
+    margin-right: 15px;
 }
+
+.numerito{
+    font-size: 17px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.carrito{
+    font-size: 25px;
+    color: rgb(69, 69, 182);
+}
+
+.carrito:hover{
+    color: blueviolet;
+}
+
+

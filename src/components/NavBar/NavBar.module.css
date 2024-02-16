@@ -1,31 +1,40 @@
+
+
 .navegation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 20px;
-    padding: 0px;
     text-decoration: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Cambia al color de fondo deseado */
+    z-index: 100;  
+}
+
+.menuContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;
+  width: 52%;
+  margin: 0px 0px 0px 15px;
 }
 
 .navCategoria{
     display: flex;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
     gap: 10px;
-}
-
-.navCategoria1{
-    text-decoration: none;
-    color: rgb(7, 11, 15);
-
+    margin: 0px 0px;
+    padding:0px;
 }
 
 .logo{
     text-decoration: none;
     color: rgb(9, 12, 15);
-    font-size: 25px;
-    font-weight: bold;
-    margin-right: 50px;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0px 0px 0px 0px;
+    padding:0px;
 }
 
 .botonesNav{
@@ -35,14 +44,11 @@
     color: black;
     background: transparent;
     font-size: 15px;
-    cursor: pointer;
 }
 
 a{
     text-decoration: none;
-  }
-
-  
+  }  
   
   .botonesNav:hover{
     color: #007bff;
@@ -55,6 +61,8 @@ a{
 .menuIcon {
     display: none; /* Oculta el icono del menú en tamaños de pantalla grandes */
     cursor: pointer;
+    border: 2px solid blue;  
+  font-size: 25px;
   }
   
   .menuOpen {
@@ -62,8 +70,15 @@ a{
   }
   
   @media screen and (max-width: 768px) {
-    .navigation {
-      flex-direction: column; /* Cambia la dirección del menú en tamaños pequeños */
+    .navegation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px 10px;
+    }
+
+    .menuContainer{
+      width: 90%;
     }
   
     .menuIcon {
@@ -79,17 +94,11 @@ a{
       display: flex !important; /* Muestra el menú cuando está abierto en tamaños pequeños */
     }
 
-    .navegation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0px 0px;
-        width: 100%;
-    }
-
     .logo{
-        border: 2px solid red;
+        font-size: 23px;
+        margin-right: 0px;
     }
 
   }
+  
   

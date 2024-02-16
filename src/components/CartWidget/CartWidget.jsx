@@ -6,15 +6,16 @@ import { Link } from "react-router-dom";
 const CartWidget = () => {
     const { totalQuantity } = useCart()
 
-    // Verificar si totalQuantity es NaN y manejarlo
-    const quantityToShow = isNaN(totalQuantity) ? 0 : totalQuantity;
 
+
+    // Verificar si totalQuantity es NaN y manejarlo
+    const quantityToShow = isNaN(totalQuantity) ? 0 : String(totalQuantity);
 
     return (
-        <Link to="/cart" className={classes.enlace}>
+        <Link to="/cart">
             <div className={classes.contenedor}>
-                <p style={{ fontSize: '25px' }}>{String(quantityToShow)}</p>
-                <FaCartArrowDown style={{ color: 'blue', fontSize: '30px' }} />
+                <p className={classes.numerito}>({quantityToShow})</p>
+                <FaCartArrowDown className={classes.carrito} />
             </div>
         </Link>
 

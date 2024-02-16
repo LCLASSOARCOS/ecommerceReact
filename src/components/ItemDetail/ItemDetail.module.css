@@ -11,9 +11,9 @@
 
 .titulo{
     font-size: 25px;
-    margin-top: 0px;
+    align-items: start;
     text-transform: uppercase;
-    margin-bottom: 0px;
+    margin: 0px;
     font-weight: none;
     color: rgb(107, 107, 108);
 }
@@ -21,7 +21,8 @@
 .divisor{
     display: flex;
     flex-direction: column;
-    margin-top: 0px;
+    align-items: start;
+    margin-top: 40px;
     margin-left: 70px;
 }
 
@@ -40,11 +41,11 @@
 
 .description{
     font-size: 15px;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .cop{
-    margin-top: 40px;
+    margin-top: 20px;
     font-weight: bold;
 }
 
@@ -70,4 +71,5 @@
 .divisor p{
     font-size: 15px;
 }
+
 

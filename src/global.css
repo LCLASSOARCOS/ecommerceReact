@@ -1,0 +1,13 @@
+/* global.css */
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    margin-top: var(--navbar-height, 0);
+    }
+  
+
+  /* Otros estilos globales que desees añadir */
