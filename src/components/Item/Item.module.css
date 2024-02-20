@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .img{
@@ -12,14 +12,13 @@
 
 .titulo{
     font-size: 12px;
-    margin-top: 7px;
+    margin: 7px 0px 0px 0px;
     font-weight: normal;
     margin-bottom: 0px;
 }
 
 .parrafo2{
-    margin-top: 0px;
-    margin-bottom: 3px ;
+    margin: 0px 0px 10px 0px;
     font-size: 12px;
     font-weight: bold;
 }

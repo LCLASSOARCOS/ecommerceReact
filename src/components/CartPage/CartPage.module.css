@@ -1,11 +1,4 @@
-.padre{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
-    padding: 0px 100px;
-}
+
 
 ul li {
     list-style: none;
